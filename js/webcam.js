@@ -13,7 +13,7 @@ var Webcam = {
 	    	camNr++;
 	    	Webcam.camNr = camNr;
 
-	    	console.log(title+' '+camNr);
+	    	//console.log(title+' '+camNr);
 	    	if(Webcam.camStreams[camNr] == undefined) {
 				Webcam.camStreams[camNr] = { imageNr : 1};
 				Webcam.camStreams[camNr].el = el;
@@ -210,7 +210,7 @@ var Webcam = {
 		//}
 	},
 	imageOnclick : function() { // Clicking on the image will pause the stream
-		console.log("click");
+		//console.log("click");
 		Webcam.camStreams[this.camNr].paused = !Webcam.camStreams[this.camNr].paused;
 		if (!Webcam.camStreams[this.camNr].paused) Webcam.createImageLayer(this.camNr, Webcam.camStreams[this.camNr].el, Webcam.camStreams[this.camNr].streamurl);
 	},
