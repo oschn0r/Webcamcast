@@ -1,0 +1,104 @@
+<!-- 
+
+  these are not the droids you're looking for.
+                                                                       
+    .-.
+       /_ _\
+       |o^o|
+       \ _ /
+      .-'-'-.
+    /`)  .  (`\
+   / /|.-'-.|\ \
+   \ \| (_) |/ /  .-""-.
+    \_\'-.-'/_/  /[] _ _\
+    /_/ \_/ \_\ _|_o_LII|_
+      |'._.'|  / | ==== | \
+      |  |  |  |_| ==== |_|
+       \_|_/    ||" ||  ||
+       |-|-|    ||LI  o ||
+       |_|_|    ||'————'||
+      /_/ \_\  /__|    |__\
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+    <title>Webcamcast</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all">
+</head>
+
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Webcamcast</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Add Camera</a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+<div class="container">
+  <div class="row">
+
+    <div id="webcam1-container" class="col-sm-6 col-md-6 col-lg-6">
+      
+    </div>
+
+    <div id="webcam2-container" class="col-sm-6 col-md-6 col-lg-6">
+      
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div id="webcam3-container" class="col-sm-6 col-md-6 col-lg-6">
+      
+    </div>
+    <div id="webcam4-container" class="col-sm-6 col-md-6 col-lg-6">
+      
+    </div>
+
+  </div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script>
+  // CDN Fallback
+  if(typeof jQuery == 'undefined') { 
+    document.write(unescape('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'));
+    document.write(unescape('%3Cscript src="js/jquery-ui.min.js"%3E%3C/script%3E'));
+  }
+</script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/jquery.base64.js"></script> 
+<script type="text/javascript" src="js/webcam.js"></script> 
+<script type="text/javascript">
+$(function(global) {
+  Webcam.addCamera("Webcam 2", "webcam1", "http://192.168.1.157:8080/?action=snapshot&n=");
+  Webcam.addCamera("Webcam 1", "webcam2", "http://192.168.1.253:8080/?action=snapshot&n=");
+  Webcam.addCamera("Webcam 3", "webcam3", "http://192.168.1.157:8081/?action=snapshot&n=");
+  Webcam.addCamera("Webcam 4", "webcam4", "http://192.168.1.157:8090/test.mjpg?");
+});
+</script>
+</body>
+</html>
